@@ -83,6 +83,8 @@
 ### Standard Queues
 ### Worker Queues
 ### Publish and Subscribe
+- In publish/subscribe pattern, single message is delivered to mutiple consumers 
+- The messages will be lost if no queue is bound to the exchange yet
 ### Direct Routing 
 ### Remote Procedure Calls(RPC)
 

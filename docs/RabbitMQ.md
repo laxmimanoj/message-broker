@@ -88,6 +88,9 @@
 - In publish/subscribe pattern, single message is delivered to mutiple consumers 
 - The messages will be lost if no queue is bound to the exchange yet
 ### Direct Routing 
+- In direct routing, message from exchange goes to the queues whose binding key exactly matches the routing key of the message
+- It is perfectly legal to bind multiple queues with the same binding key.  In that case, the direct exchange will behave like fanout and will broadcast the message to all the matching queues
+- Also multiple routing keys can be used to bind the queue to exchange
 ### Remote Procedure Calls(RPC)
 
 ### Microservices and Queuing

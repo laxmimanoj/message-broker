@@ -48,7 +48,8 @@
 - ideal for broadcasting messages   
 #### Topic Exchanges
 - routes messages to one or more queues via by matching routing key patterns between the exchanges and all the queues that are bound to it  
-- use # and/or *  
+- * (star) can substitute for exactly one word
+- # (hash) can substitute for zero or more words
 - ideal for selectively multicasting messages  
 #### Headers Exchanges
 - routes messages to one or more queues via attributes in the header  

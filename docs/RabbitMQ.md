@@ -93,8 +93,9 @@
 - It is perfectly legal to bind multiple queues with the same binding key.  In that case, the direct exchange will behave like fanout and will broadcast the message to all the matching queues
 - Also multiple routing keys can be used to bind the queue to exchange
 ### Topic Routing
-- "*" (star) can substitute for exactly one word
-- "#" (hash) can substitute for zero or more words
+- Messages sent to a topic exchange can't have an arbitrary routing_key - it must be a list of words, delimited by dots upto 255 bytes
+- " * " (star) can substitute for exactly one word
+- " # " (hash) can substitute for zero or more words
 ### Remote Procedure Calls(RPC)
 
 ### Microservices and Queuing

@@ -92,6 +92,9 @@
 - In direct routing, message from exchange goes to the queues whose binding key exactly matches the routing key of the message
 - It is perfectly legal to bind multiple queues with the same binding key.  In that case, the direct exchange will behave like fanout and will broadcast the message to all the matching queues
 - Also multiple routing keys can be used to bind the queue to exchange
+### Topic Routing
+- "*" (star) can substitute for exactly one word
+- "#" (hash) can substitute for zero or more words
 ### Remote Procedure Calls(RPC)
 
 ### Microservices and Queuing

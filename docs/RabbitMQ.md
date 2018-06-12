@@ -82,6 +82,10 @@
 -- message can be sent to other consumer  
 -- message can be discarded  
 ### Standard Queues
+- RabbitMQ is a message broker: it accepts and forwards messages
+- Producing means nothing more than sending. A program that sends messages is a producer 
+- A queue is only bound by the host's memory & disk limits, it's essentially a large message buffer
+- Consuming has a similar meaning to receiving. A consumer is a program that mostly waits to receive messages
 ### Worker Queues
 - Work queue is used to distribute messages among multiple workers
 - In work queues messages will be shared between them
@@ -100,7 +104,6 @@
 - When special characters " * " (star) and " # " (hash) aren't used in bindings, the topic exchange will behave just like a direct one
 ### Remote Procedure Calls(RPC)
 - The pattern to run a function on a remote computer and wait for the result is commonly known as Remote Procedure Call or RPC
-
 ### Message properties
 The AMQP 0-9-1 protocol predefines a set of 14 properties that go with a message. Most of the properties are rarely used, with the exception of the following:
 - Persistent: : Marks a message as persistent (with a value of 2) or transient (any other value). Take a look at the second tutorial.
@@ -139,7 +142,8 @@ Need to figure out clearly.
 ### Synchronous and Asynchronous Communication with RabbitMQ
 
 ### RabbitMQ .Net Client API 
-
+- Built on top of AMQP version 0-9-1
+- The client supports .NET Core as well as .NET Framework 4.5.1+
 ## Architecture Notes
 ### Notes
 - RabbitMQ initial spin up can be done with a batch job    

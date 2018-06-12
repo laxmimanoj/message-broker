@@ -112,7 +112,26 @@ The AMQP 0-9-1 protocol predefines a set of 14 properties that go with a message
 - ReplyTo: Commonly used to name a callback queue.
 - CorrelationId: Useful to correlate RPC responses with requests
 ### Microservices and Queuing
-
+- Message queues provide inter-process communications
+#### Message queueing properties
+- durability
+- security policies
+- message purging
+- message filtering 
+- delivery policies
+- routing policies
+- batching policies
+- quiteria criteria
+- receipt notification
+#### Uses of Message queuing
+- decoupling 
+- redundancy 
+- scalability
+- resiliency
+- delivery guarantees
+- ordering guarantees 
+- buffering 
+- asynchronus communication
 ### Installation and Configuration
 #### Installation via Docker
 docker container run -d --hostname local-rmq -p 5672:5672 --name rmq rabbitmq:3  

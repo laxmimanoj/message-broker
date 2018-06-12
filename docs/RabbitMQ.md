@@ -99,7 +99,15 @@
 - When a queue is bound with " # " (hash) binding key - it will receive all the messages, regardless of the routing key - like in fanout exchange
 - When special characters " * " (star) and " # " (hash) aren't used in bindings, the topic exchange will behave just like a direct one
 ### Remote Procedure Calls(RPC)
+- The pattern to run a function on a remote computer and wait for the result is commonly known as Remote Procedure Call or RPC
 
+### Message properties
+The AMQP 0-9-1 protocol predefines a set of 14 properties that go with a message. Most of the properties are rarely used, with the exception of the following:
+- Persistent: : Marks a message as persistent (with a value of 2) or transient (any other value). Take a look at the second tutorial.
+- DeliveryMode: those familiar with the protocol may choose to use this property instead of Persistent. They control the same thing.
+- ContentType: Used to describe the mime-type of the encoding. For example for the often used JSON encoding it is a good practice to set this property to: application/json.
+- ReplyTo: Commonly used to name a callback queue.
+- CorrelationId: Useful to correlate RPC responses with requests
 ### Microservices and Queuing
 
 ### Installation and Configuration

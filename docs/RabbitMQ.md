@@ -111,7 +111,31 @@ The AMQP 0-9-1 protocol predefines a set of 14 properties that go with a message
 ### Microservices and Queuing
 
 ### Installation and Configuration
+#### Installation via Docker
+docker container run -d --hostname local-rmq -p 5672:5672 --name rmq rabbitmq:3  
+docker container run -d --hostname local-rmq -p 15672:15672 --name rmq-mgmt rabbitmq:3-management  
+Open question? management plugin unable to detect rabbitmq node and as a result doesnot disply queues  
 
+#### Installation on Windows OS
+1. Get to https://www.rabbitmq.com/install-windows.html#run-windows   
+2. Download and install Erlang runtime as Admin   
+3. Download and install rabbit-server-%version%.exe as Admin  
+4. To configure management plugin on enterprise machines, 
+please see below  
+a) Open command prompt as administrator  
+b) Change directory to the \Program Files\RabbitMQ Server\rabbitmq_server-3.5.5\sbin directory  
+c) Run the following commands:  
+SET HOMEDRIVE=C:  
+rabbitmq-plugins.bat enable rabbitmq_management  
+rabbitmq-service.bat stop  
+rabbitmq-service.bat remove  
+rabbitmq-service.bat install  
+rabbitmq-service.bat start  
+SET HOMEDRIVE=(drive:) (set to home drive letter)  
+
+Open Question? rabbitmqctl commands are still not working from sbin directory.   
+This has something to do with erlang.cookie placement on enterprise machines.   
+Need to figure out clearly.  
 ### Synchronous and Asynchronous Communication with RabbitMQ
 
 ### RabbitMQ .Net Client API 

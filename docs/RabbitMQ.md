@@ -6,8 +6,8 @@
  - Implements Advanced Message Queueing Protocol(AMQP)  0-9-1  
  - Written in Erlang    
  - Distributed fault tolerant design  
- - RabbitmQ server is message broker  
- - RabbitMQ is reliable(persisted to disk, message acknowledments), routing(via exchanges and bindings), clustering(high availabilty), management web ui and CLI(RabbitMQ ctrl and admin)    
+ - RabbitMQ server is message broker  
+ - RabbitMQ is reliable(persisted to disk, message acknowledments), routing(via exchanges and bindings), clustering(high availabilty), management Web UI and CLI(RabbitMQ ctrl and admin)    
  - RabbitMQ is cross-platform  
  - RabbitMQ supports various technologies via client libraries  
  - RabbitMQ is open-source but enterprise support is also available(via http:///pivotal.io)  
@@ -29,7 +29,7 @@
 - publisher-->exchange--with routes/bindings-->queue<--subscribes/acks-->consumer    
 ### Exchanges 
 - Exchanges are AMQP entities where messages are sent to the message broker  
-- Exchanges take a message and routes to one or more queues. The type of routing routing depends on exchange type used and exchanging rules called bindings  
+- Exchanges take a message and routes to one or more queues. The type of routing depends on exchange type used and exchanging rules called bindings  
 - Exchanges are generally defined with attributes  
 - Examples of attributes are   
 -- Name  
@@ -159,7 +159,8 @@ Open Question? rabbitmqctl commands are still not working from sbin directory.
 This has something to do with erlang.cookie placement on enterprise machines.   
 Need to figure out clearly.  
 ### Synchronous and Asynchronous Communication with RabbitMQ
-
+- Synchronous via request/reply pattern(Remote Procedure Calls) 
+- Asynchronous via Topic based publish/subscribe pattern
 ### RabbitMQ .Net Client API 
 - Built on top of AMQP version 0-9-1
 - The client supports .NET Core as well as .NET Framework 4.5.1+
